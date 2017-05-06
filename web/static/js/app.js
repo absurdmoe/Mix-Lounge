@@ -46,6 +46,7 @@ let render = (presences) => {
 
 
 
+
 let room = socket.channel("room:lobby")
 room.on("presence_state", state => {
   presence = Presence.syncState(presence,state)
@@ -57,6 +58,26 @@ room.on("presence_diff", diff => {
 })
 
 room.join()
+// after you join the room
+
+let messageInput = document.getElementById("newMessage");
+let messagelist = document.getElementById("messagelist");
+let chat = document.getElementById('chatx');
+chat.addEventListener("submit",function(e){
+  e.preventDefault();
+  room.push("message:new",messageInput.value);
+  console.log(messageInput.value)
+
+})
+room.on("message:new",function(message){
+  // renderMessage(message);
+  console.log(message.body)
+  let listitem = document.createElement('li');
+  listitem.innerText = message.body
+  messagelist.appendChild(listitem)
+
+})
+
 // Import local files
 //
 // Local files can be imported directly using relative
