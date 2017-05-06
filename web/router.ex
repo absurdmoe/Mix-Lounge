@@ -20,6 +20,9 @@ defmodule Chatty.Router do
 
     get "/", PageController, :index
     get "/:user", PageController, :index
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+
   end
 
 
