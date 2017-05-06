@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hello Chatty!</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1> Hello, <span id="user"><%= @conn.params["user"]%></span> </h1>
+        <input type="file" accept="video/*;capture=camcorder">
+        <input type="file" accept="audio/*;capture=microphone">
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+      <form class="chat">
+        <input type="text" placeholder="say something fun"/>
+        <input type="submit"/>
+      </form>
+
+      <h3>Users online</h3>
+      <ul id="userlist">
+      </ul>
+
+    </div> <!-- /container -->
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
