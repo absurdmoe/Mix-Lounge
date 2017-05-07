@@ -1,5 +1,9 @@
 defmodule Chatty.Router do
+  @moduledoc false
+
   use Chatty.Web, :router
+  require Ueberauth
+
   # use Phoenix.Router
   # use Phoenix.Router.Socket, mount: "/ws"
 
@@ -14,6 +18,16 @@ defmodule Chatty.Router do
   pipeline :api do
     plug :accepts, ["json"]
   end
+
+  scope "/auth", Chatty do
+    pipe_through [:browser]
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+    post "/:provider/callback", AuthController, :callback
+    delete "/logout", AuthController, :delete
+  end
+
 
   scope "/", Chatty do
     pipe_through :browser # Use the default browser stack

@@ -19,7 +19,7 @@ defmodule Chatty.Mixfile do
   def application do
     [mod: {Chatty, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :oauth, :ueberauth_facebook]]
+                    :phoenix_ecto, :postgrex, :oauth, :ueberauth, :ueberauth_facebook]]
   end
 
   # Specifies which paths to compile per environment.
@@ -41,8 +41,6 @@ defmodule Chatty.Mixfile do
      {:oauth, github: "tim/erlang-oauth"},
      {:ueberauth, "~> 0.4"},
      {:ueberauth_facebook, "~> 0.3"}]
-
-     {:dogma, ">= 0.0.0", only: [:dev, :test]}
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
