@@ -5,9 +5,26 @@
 # is restricted to this project.
 use Mix.Config
 
+config :chatty, Users.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "chatty_repo",
+  username: "kristyn",
+  password: "",
+  hostname: "localhost"
+
+
 # General application configuration
 config :chatty,
   ecto_repos: [Chatty.Repo]
+
+config :ueberauth, Ueberauth,
+  providers: [
+    facebook: {Ueberauth.Strategy.Facebook, []}
+  ]
+
+config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
+  client_id: System.get_env("FACEBOOK_CLIENT_ID"),
+  client_secret: System.get_env("FACEBOOK_CLIENT_SECRET")
 
 # Configures the endpoint
 config :chatty, Chatty.Endpoint,
