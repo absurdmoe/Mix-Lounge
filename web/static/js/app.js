@@ -33,8 +33,7 @@ $(function() {
       onlineAt: formatedTimestamp(metas[0].online_at)
     }
   }
-
-  let userlist = document.getElementById('userlist');
+    let userlist = document.getElementById('userlist');
   let render = (presences) => {
     userlist.innerHTML = Presence.list(presences, listBy)
     .map(presence => `
@@ -46,9 +45,6 @@ $(function() {
         `)
         .join("")
       }
-
-
-
       let room = socket.channel("room:lobby")
       room.on("presence_state", state => {
         presence = Presence.syncState(presence,state)
@@ -61,6 +57,57 @@ $(function() {
 
       room.join()
 
+  
+  let userlist = document.getElementById('userlist');
+let render = (presences) => {
+  userlist.innerHTML = Presence.list(presences, listBy)
+  .map(presence => `
+    <li>
+     <strong>${presence.user}</strong>
+     <br>
+     online at: ${presence.onlineAt}
+     </li>
+    `)
+    .join("")
+}
+
+
+
+
+let room = socket.channel("room:lobby")
+room.on("presence_state", state => {
+  presence = Presence.syncState(presence,state)
+  render(presence)
+})
+room.on("presence_diff", diff => {
+  presence = Presence.syncDiff(presence, diff)
+  render(presence)
+})
+
+room.join()
+// after you join the room
+
+let messageInput = document.getElementById("newMessage");
+let messagelist = document.getElementById("messagelist");
+let chat = document.getElementById('chatx');
+chat.addEventListener("submit",function(e){
+  e.preventDefault();
+  room.push("message:new",messageInput.value);
+  console.log(messageInput.value)
+
+})
+room.on("message:new",function(message){
+  // renderMessage(message);
+  console.log(message.body)
+  let listitem = document.createElement('li');
+  listitem.innerText = message.body
+  messagelist.appendChild(listitem)
+
+})
+
+  
+  
+ 
     //Soundcloud Api Widget
     (function(){
       let widgetIframe = document.getElementById('sc-widget'),
@@ -73,6 +120,8 @@ $(function() {
             console.log('sound ' + currentSound.get('') + 'began to play');
           });
         });
+        
+        
         // get current level of volume
         widget.getVolume(function(volume) {
           console.log('current volume value is ' + volume);
@@ -82,7 +131,7 @@ $(function() {
         // get the value of the current position
       });
 
-    }());
+     }());
 
 
     let rockArrPlayllist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/301080731","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/151673651","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/166373421"];
@@ -109,13 +158,17 @@ $(function() {
        } else if (userSearchInput==="reggae") {
          let randReggaePlaylist = reggaeArrPlaylist[Math.floor(Math.random() * reggaeArrPlaylist.length)];
          $("#sc-widget").attr("src", randReggaePlaylist);
-       } else if (userSearchInput==="house") {
+       }//end of elseif
+        else if (userSearchInput==="house") {
          let randHousePlaylist = houseArrPlaylist[Math.floor(Math.random() * houseArrPlaylist.length)];
          $("#sc-widget").attr("src", randHousePlaylist);
-       } else {
+       } //end of elseif
+        else {
          alert("Please enter one of the listed above music genres and try again!")
-       }
-    }
+       }//end of else
+    }//end of selectPlaylist function
+   }
+
 // Import local files
 //
 // Local files can be imported directly using relative

@@ -19,10 +19,14 @@
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-      <form class="chat">
-        <input type="text" placeholder="say something fun"/>
+      <form class="chat" id="chatx">
+        <input type="text" placeholder="say something fun" name="newMessage" id="newMessage"/>
         <input type="submit"/>
       </form>
+
+      <h3>Group Chat</h3>
+      <ul id="messagelist">
+      </ul>
 
       <h3>Users online</h3>
       <ul id="userlist">
