@@ -31,7 +31,7 @@
       <h3>Users online</h3>
       <ul id="userlist">
       </ul>
-
+      <%= render @view_module, @view_template, assigns %>
     </div> <!-- /container -->
 
     <!-- <div id="player"></div> -->
