@@ -1,6 +1,6 @@
 
 # pipe_channel
-pipe_channel is a music app built with Elixer and Phoenix 
+pipe_channel is a music app built with Elixir and Phoenix 
 =======
 
 Contact the Developers: 
