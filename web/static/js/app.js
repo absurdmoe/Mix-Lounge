@@ -108,11 +108,19 @@ $(function() {
        e.preventDefault();
        userSearchInput = $('#search').val();
        console.log(userSearchInput);
-       selectPlaylist();
+       room.push("genre:new",userSearchInput);
    });
+   room.on("genre:new",function(genre){
+     userSearchInput = genre.body
+     console.log(userSearchInput + 'foo')
+     selectPlaylist(userSearchInput);
+   })
+
+
 
    function selectPlaylist() {
       if(userSearchInput==="rock") {
+        console.log('phonebar')
         let randRockPlaylist = rockArrPlayllist[Math.floor(Math.random() * rockArrPlayllist.length)];
         $("#sc-widget").attr("src", randRockPlaylist);
       } else if (userSearchInput==="hip-hop") {
