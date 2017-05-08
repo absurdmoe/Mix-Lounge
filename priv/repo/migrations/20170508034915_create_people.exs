@@ -1,16 +1,13 @@
-defmodule Chatty.Repo.Migrations.CreateUser do
+defmodule Users.Repo.Migrations.CreatePeople do
   use Ecto.Migration
 
   def change do
-    create table(:users) do
+    create table(:people) do
       add :email, :string
       add :auth_provider, :string
       add :name, :string
       add :uid, :string
       add :avatar, :string
-
-      timestamps()
     end
-
   end
 end
