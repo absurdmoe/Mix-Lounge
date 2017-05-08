@@ -8,7 +8,7 @@ use Mix.Config
 config :chatty, Users.Repo,
   adapter: Ecto.Adapters.Postgres,
   database: "chatty_repo",
-  username: "minimoe",
+  username: "kuzia",
   password: "",
   hostname: "localhost"
 

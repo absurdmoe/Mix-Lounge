@@ -97,10 +97,7 @@ $(function() {
         show_comments: false;
           widget.bind(SC.Widget.Events.PLAY, function() {
                 /* get information about currently playing sound */
-                widget.getCurrentSound(function(currentSound) {
-                  console.log('sound ' + currentSound.get('') + 'began to play');
-
-                }); //end of widget.getCurrentSound
+              
           }); //end of widget.bind(widget events play)
 
 
