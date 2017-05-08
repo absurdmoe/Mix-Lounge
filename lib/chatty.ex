@@ -6,8 +6,10 @@ defmodule Chatty do
   def start(_type, _args) do
     import Supervisor.Spec
 
+
     # Define workers and child supervisors to be supervised
     children = [
+      supervisor(Users.Repo, []),
       # Start the Ecto repository
       supervisor(Chatty.Repo, []),
       # Start the endpoint when the application starts
