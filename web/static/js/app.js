@@ -13,6 +13,12 @@ let chat;
 let widgetIframe;
 let widget;
 let userSearchInput;
+<<<<<<< master
+let rockArrPlayllist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/98679754&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/206769301&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/166373421&auto_play=true&show_comments=false&show_user=false"];
+let hiphopArrPlaylist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/121610443&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/117265791&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/144919148&auto_play=true&show_comments=false&show_user=false"];
+let reggaeArrPlaylist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/182509432&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/3390956&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/83035406&auto_play=true&show_comments=false&show_user=false"];
+let houseArrPlaylist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/104226047&auto_play=true&show_comments=false&show_user=false&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/187820200","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/63243864&auto_play=true&show_comments=false&show_user=false"];
+=======
 let backgrounds = {
   hiphop : "https://images.unsplash.com/photo-1473247432547-8dad9b3c2d61?dpr=1&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=&bg=",
   rock: "https://images.unsplash.com/photo-1481886756534-97af88ccb438?dpr=1&auto=format&fit=crop&w=1199&h=674&q=80&cs=tinysrgb&crop=&bg=",
@@ -23,6 +29,7 @@ let rockArrPlayllist = ["https://w.soundcloud.com/player/?url=https%3A//api.soun
 let hiphopArrPlaylist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/121610443","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/117265791","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/144919148"];
 let reggaeArrPlaylist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/182509432","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/3390956","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/83035406"];
 let houseArrPlaylist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/104226047","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/187820200","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/63243864"];
+>>>>>>> master
 $(function() {
 
   user = document.getElementById('user').innerText;
@@ -32,7 +39,7 @@ $(function() {
   chat = document.getElementById('chatx');
   widgetIframe = document.getElementById('sc-widget');
 
-  socket = new Socket("/socket", {params: {user: user}})
+  socket = new Socke t("/socket", {params: {user: user}})
     socket.connect()
 
 
@@ -86,14 +93,18 @@ $(function() {
   })
   //Soundcloud Api Widget
   function sound_cloud(){
+
       widget = SC.Widget(widgetIframe);
 
       widget.bind(SC.Widget.Events.READY, function() {
-
+        buying: false;
+        auto_play: true;
+        show_comments: false;
           widget.bind(SC.Widget.Events.PLAY, function() {
                 /* get information about currently playing sound */
                 widget.getCurrentSound(function(currentSound) {
                   console.log('sound ' + currentSound.get('') + 'began to play');
+
                 }); //end of widget.getCurrentSound
           }); //end of widget.bind(widget events play)
 
@@ -112,7 +123,7 @@ $(function() {
 
    $("#submitPlist").click(function(e){
        e.preventDefault();
-       userSearchInput = $('#search').val();
+       userSearchInput = $('#search').val().toLowerCase();
        console.log(userSearchInput);
        room.push("genre:new",userSearchInput);
    });
