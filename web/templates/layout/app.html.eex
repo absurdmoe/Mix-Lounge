@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Days+One" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -71,12 +72,12 @@
           </form>
         </div>
          <div class="col-xs-6 col-md-4">
-           <h3 id="grChatHeading">Group Chat</h3>
+           <h2 id="grChatHeading">Group Chat</h2>
            <ul id="messagelist">
            </ul>
          </div>
         <div class="col-xs-6 col-md-4">
-          <h3 id="usersHeading">Users online</h3>
+          <h2 id="usersHeading">Users online</h2>
           <ul id="userlist">
           </ul>
         </div>
@@ -86,7 +87,7 @@
 
     <form>
        <div class="form-group" action="#">
-       <label for="exampleInputEmail1">Search for a playlist. Type rock, hip-hop,reggae or house</label>
+       <label id="searchLabel">Search for a playlist. Type rock, hip-hop,reggae or house</label>
        <input type="text" class="form-control" id="search" placeholder="what genre of music do you want to listen to?">
         <button type="submit" class="btn btn-default" id="submitPlist">Search</button>
    </form>

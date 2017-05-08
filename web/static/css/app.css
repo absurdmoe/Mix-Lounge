@@ -4,6 +4,7 @@ html, body {
     font-family: 'Athiti', sans-serif;
     font-size: 22px;
 }
+
 .navbar {
     background-color:#cccccc; /*<-- color in case rgba not supported by browsers*/
     background-color:rgba(204, 204, 204, 1);
@@ -47,13 +48,11 @@ html, body {
   border: none;
 }
 #greeting{
+  font-family: 'Days One', sans-serif;
   font-weight: 800;
   font-size: 43px;
+  color: #01c5d0;
 }
-/*#chatx{
-  display: inline-block;
-  float: right;
-}*/
 #chatSubBtn{
   background-color: #01c5d0;
   font-weight: 800;
@@ -61,9 +60,16 @@ html, body {
 #chat{
   margin-top: 30px;
 }
-#grChatHeading,#usersHeading{
-  font-family: 'Fascinate Inline', cursive;
+#grChatHeading,#usersHeading,#searchLabel{
+  font-family: 'Days One', sans-serif;
+  color: #01c5d0;
 }
 #submitPlist{
     background-color: #01c5d0;
+}
+#messagelist,#userlist{
+  background-color: #ffffff;
+}
+#newMessage{
+  width: 90%;
 }
