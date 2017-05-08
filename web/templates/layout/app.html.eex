@@ -14,6 +14,14 @@
   <body>
     <div class="container">
       <h1> Hello, <span id="user"><%= @conn.params["user"]%></span> </h1>
+
+
+      <!-- Begin Fresh Tilled Soil Video Chat Embed Code -->
+<div id="freshtilledsoil_embed_widget" class="video-chat-widget"></div>
+<script id="fts" src="http://freshtilledsoil.com/embed/webrtc-v5.js?r=FTS0316-CZ6NqG97"></script>
+<!-- End Fresh Tilled Soil Video Chat Embed Code -->
+
+
         <input type="file" accept="video/*;capture=camcorder">
         <input type="file" accept="audio/*;capture=microphone">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -31,7 +39,7 @@
       <h3>Users online</h3>
       <ul id="userlist">
       </ul>
-
+      <%= render @view_module, @view_template, assigns %>
     </div> <!-- /container -->
 
     <!-- <div id="player"></div> -->

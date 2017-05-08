@@ -3,6 +3,7 @@ defmodule Chatty.RoomChannel do
   alias Chatty.Presence
 
   def join("room:lobby", _, socket) do
+    
     send self(), :after_join
     {:ok, socket}
   end
@@ -17,6 +18,16 @@ defmodule Chatty.RoomChannel do
 
   def handle_in("message:new", message, socket) do
     broadcast! socket, "message:new", %{
+      user: socket.assigns.user,
+      body: message,
+      timestamp: :os.system_time(:milli_seconds)
+    }
+    {:noreply, socket}
+  end
+
+
+  def handle_in("genre:new", message, socket) do
+    broadcast! socket, "genre:new", %{
       user: socket.assigns.user,
       body: message,
       timestamp: :os.system_time(:milli_seconds)
