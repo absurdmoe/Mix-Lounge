@@ -27,7 +27,6 @@ let backgrounds = {
 }
 
 $(function() {
-
   user = document.getElementById('user').innerText;
   userlist = document.getElementById('userlist');
   messageInput = document.getElementById("newMessage");
@@ -134,22 +133,26 @@ $(function() {
         $("#sc-widget").attr("src", randRockPlaylist);
         $('body').css('background',`url(${backgrounds.rock}) no-repeat center center fixed`);
         $('body').css('background-size','cover');
+        localStorage.song = "randRockPlaylist"
       } else if (userSearchInput==="hip-hop") {
         let randHiphopPlaylist = hiphopArrPlaylist[Math.floor(Math.random() * hiphopArrPlaylist.length)];
         $("#sc-widget").attr("src", randHiphopPlaylist);
         $('body').css('background',`url(${backgrounds.hiphop}) no-repeat center center fixed`);
         $('body').css('background-size','cover');
+          localStorage.song = "randHiphopPlaylist"
       } else if (userSearchInput==="reggae") {
         let randReggaePlaylist = reggaeArrPlaylist[Math.floor(Math.random() * reggaeArrPlaylist.length)];
         $("#sc-widget").attr("src", randReggaePlaylist);
         $('body').css('background',`url(${backgrounds.reggae}) no-repeat center center fixed`);
         $('body').css('background-size','cover');
+        localStorage.song = "randReggaePlaylist"
       }//end of elseif
        else if (userSearchInput==="house") {
         let randHousePlaylist = houseArrPlaylist[Math.floor(Math.random() * houseArrPlaylist.length)];
         $("#sc-widget").attr("src", randHousePlaylist);
         $('body').css('background',`url(${backgrounds.house}) no-repeat center center fixed`);
         $('body').css('background-size','cover');
+        localStorage.song = "randHousePlaylist"
       } //end of elseif
        else {
         alert("Please enter one of the listed above music genres and try again!")

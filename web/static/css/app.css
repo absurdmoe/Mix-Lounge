@@ -41,7 +41,7 @@ html, body {
 #facebookBtn {
   display: inline-block;
   float: left;
-  margin-left: 700px;
+  margin-left: 500px;
   margin-top: -21px;
   margin-bottom: 8px;
   background-color: #01c5d0;
@@ -69,6 +69,9 @@ html, body {
 }
 #messagelist,#userlist{
   background-color: #ffffff;
+}
+#userlist{
+  width: 35vw;
 }
 #newMessage{
   width: 90%;

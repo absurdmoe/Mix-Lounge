@@ -54,13 +54,7 @@
 
 
       <!-- Begin Fresh Tilled Soil Video Chat Embed Code -->
-  <div id="freshtilledsoil_embed_widget" class="video-chat-widget"></div>
-  <script id="fts" src="http://freshtilledsoil.com/embed/webrtc-v5.js?r=FTS0316-CZ6NqG97"></script>
-<!-- End Fresh Tilled Soil Video Chat Embed Code -->
-
-
-        <input type="file" accept="video/*;capture=camcorder">
-        <input type="file" accept="audio/*;capture=microphone">
+  
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
