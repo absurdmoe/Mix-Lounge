@@ -16,7 +16,7 @@ let userSearchInput;
 let rockArrPlayllist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/98679754&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/206769301&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/166373421&auto_play=true&show_comments=false&show_user=false"];
 let hiphopArrPlaylist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/121610443&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/117265791&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/144919148&auto_play=true&show_comments=false&show_user=false"];
 let reggaeArrPlaylist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/182509432&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/3390956&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/83035406&auto_play=true&show_comments=false&show_user=false"];
-let houseArrPlaylist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/104226047&auto_play=true&show_comments=false&show_user=false&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/187820200","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/63243864&auto_play=true&show_comments=false&show_user=false"];
+let houseArrPlaylist = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/104226047&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/187820200&auto_play=true&show_comments=false&show_user=false","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/63243864&auto_play=true&show_comments=false&show_user=false"];
 
 let backgrounds = {
   hiphop : "https://images.unsplash.com/photo-1473247432547-8dad9b3c2d61?dpr=1&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=&bg=",
@@ -97,7 +97,7 @@ $(function() {
         show_comments: false;
           widget.bind(SC.Widget.Events.PLAY, function() {
                 /* get information about currently playing sound */
-              
+
           }); //end of widget.bind(widget events play)
 
 
