@@ -17,6 +17,7 @@ defmodule Chatty.AuthController do
     |> redirect(to: "/")
   end
 
+
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, params) do
 
         conn
@@ -27,6 +28,5 @@ defmodule Chatty.AuthController do
         IO.inspect auth.info.image
         IO.inspect auth.info.email
         IO.puts "foobar"
-
   end
 end

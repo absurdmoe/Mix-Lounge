@@ -10,6 +10,7 @@ import_config "#{Mix.env}.exs"
 config :chatty, Users.Repo,
   adapter: Ecto.Adapters.Postgres,
   database: "chatty_repo",
+
   username: "minimoe",
   password: "",
   hostname: "localhost"
@@ -18,6 +19,9 @@ config :chatty, Users.Repo,
 # General application configuration
 config :chatty,
   ecto_repos: [Chatty.Repo]
+
+config :chatty,
+    ecto_repos: [Users.Repo]
 
 config :ueberauth, Ueberauth,
   providers: [
