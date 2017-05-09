@@ -17,5 +17,14 @@
     "javascript-brunch": "~2.0.0",
     "uglify-js-brunch": "~2.0.1",
     "jquery": ">= 2.1"
+  },
+  "name": "mix-lounge",
+  "description": "a really cool app",
+  "version": "1.0.0",
+  "engines": {
+    "node": "7.6.0",
+    "npm" : "4.4.1"
   }
+
+
 }
