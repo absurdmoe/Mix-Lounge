@@ -1,0 +1,12 @@
+ <style>
+ 	btn-lg{
+ 	margin-left: 30vw;
+ 	margin-top: 40vh;
+ 	}
+ </style>
+
+
+ <a class="btn btn-primary btn-lg" href="/auth/facebook" id="facebookBtn">
+    <i class="fa fa-facebook"></i>
+    Sign in with Facebook
+  </a>

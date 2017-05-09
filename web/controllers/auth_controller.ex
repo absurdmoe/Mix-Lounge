@@ -17,10 +17,16 @@ defmodule Chatty.AuthController do
     |> redirect(to: "/")
   end
 
-  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
+  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, params) do
 
         conn
         |> put_flash(:info, "Successfully authenticated.")
-        |> redirect(to: "/")
+        |> redirect(to: "/#{auth.info.name}")
+
+        IO.inspect auth.info.name
+        IO.inspect auth.info.image
+        IO.inspect auth.info.email
+        IO.puts "foobar"
+
   end
 end

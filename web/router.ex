@@ -22,12 +22,14 @@ defmodule Chatty.Router do
     get "/:provider/callback", AuthController, :callback
     post "/:provider/callback", AuthController, :callback
     delete "/logout", AuthController, :delete
-  end
+  end 
 
   scope "/", Chatty do
     pipe_through :browser # Use the default browser stack
-    get "/", PageController, :index
+    
+    get "/", PageController, :login
     get "/:user", PageController, :index
+
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
   end

@@ -5,10 +5,12 @@
 # is restricted to this project.
 use Mix.Config
 
+import_config "#{Mix.env}.exs"
+
 config :chatty, Users.Repo,
   adapter: Ecto.Adapters.Postgres,
   database: "chatty_repo",
-  username: "kuzia",
+  username: "minimoe",
   password: "",
   hostname: "localhost"
 
